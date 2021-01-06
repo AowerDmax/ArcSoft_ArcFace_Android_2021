@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.MeFragment">
+    <!-- 顶部导航栏 -->
+    <LinearLayout
+        android:gravity="center"
+        android:background="@color/primary"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/function_me"
+            />
+    </LinearLayout>
+    <!-- 搜索条件 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <!--下拉框-->
+        <com.xuexiang.xui.widget.spinner.materialspinner.MaterialSpinner
+            android:id="@+id/search_type"
+            android:height="25dp"
+            style="@style/Material.SpinnerStyle"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="?attr/xui_config_content_spacing_vertical"
+            app:ms_entries="@array/sort_mode_entry" />
+        <!-- 编辑框 -->
+        <com.xuexiang.xui.widget.edittext.materialedittext.MaterialEditText
+            android:layout_marginStart="5dp"
+            android:id="@+id/edit_key"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:hint="@string/search_input"
+            android:imeOptions="actionSearch"
+            app:met_floatingLabel="highlight"
+            app:met_maxCharacters="15" />
+
+        <Button
+            android:id="@+id/search"
+            style="@style/Button.Style"
+            android:layout_marginStart="10dp"
+            android:layout_width="70dp"
+            android:background="@drawable/xui_config_bg_blue_btn"
+            android:layout_marginEnd="10dp"
+            android:text="@string/search_search" />
+    </LinearLayout>
+
+    <com.bin.david.form.core.SmartTable
+        android:id="@+id/table"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>
